@@ -3,10 +3,8 @@
 Exploratory Data Analysis of cooling tower performance data (Hirakud Smelter).  
 Reproduces all analyses from the project presentation:
 
-## Towers Covered
-- Screw Compressor Cooling Tower
+## Tower Covered
 - IR Cooling Tower
-- 235 KA Cooling Tower
 
 > The script auto-detects all towers present in the CSV and runs every analysis for each one.
 
@@ -22,18 +20,6 @@ Reproduces all analyses from the project presentation:
 | Approach | CWT − WBT |
 | Effectiveness | Range / (Range + Approach) × 100 (%) |
 
-## Output Plots (per tower)
-
-| File | Description | PPT Slide |
-|---|---|---|
-| `01_descriptive_statistics.png` | Count, mean, std, min/max, skewness, kurtosis | Slide 4/13/22 |
-| `02_boxplots.png` | Boxplot for each parameter | Slide 5/14/23 |
-| `03_skewness_qqplots.png` | Skewness bar + QQ-plot per parameter | Slide 6/15/24 |
-| `04_distributions.png` | Histogram + KDE with mean/median lines | Slide 7/16/25 |
-| `05_scatter_plots.png` | Pairwise scatter plots with regression lines | Slide 8/17/26 |
-| `06_correlation_heatmap.png` | Pearson correlation heatmap | Slide 9/18/27 |
-| `07_effectiveness_analysis.png` | Range vs Approach boundary, effectiveness boxplot, approach distribution | Slide 10/19/28 |
-| `08_conclusion_summary.png` | Summary table with optimal approach range | Slide 11/20/29 |
 
 ## Setup
 
