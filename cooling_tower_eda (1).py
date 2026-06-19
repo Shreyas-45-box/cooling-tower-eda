@@ -97,7 +97,7 @@ for tower in towers:
 
     all_cols = PARAMS + DERIVED
 
-    # ── Slide 4 / 13 / 22 – DESCRIPTIVE STATISTICS ────────────────────────────
+    # ── DESCRIPTIVE STATISTICS ────────────────────────────
     print("\n[1] Descriptive Statistics")
     desc = df[all_cols].describe().T
     desc["skewness"] = df[all_cols].skew()
@@ -124,7 +124,7 @@ for tower in towers:
     ax.set_title(f"Descriptive Statistics – {tower}", fontsize=14, pad=12)
     save(fig, out, "01_descriptive_statistics.png")
 
-    # ── Slide 5 / 14 / 23 – BOXPLOTS ──────────────────────────────────────────
+    # ── BOXPLOTS ──────────────────────────────────────────
     print("[2] Boxplots")
     fig, axes = plt.subplots(1, len(PARAMS), figsize=(14, 5))
     colors = sns.color_palette(PALETTE, len(PARAMS))
@@ -138,7 +138,7 @@ for tower in towers:
     plt.tight_layout()
     save(fig, out, "02_boxplots.png")
 
-    # ── Slide 6 / 15 / 24 – SKEWNESS + QQ-PLOTS ───────────────────────────────
+    # ── SKEWNESS + QQ-PLOTS ───────────────────────────────
     print("[3] QQ-plots + Skewness")
     n = len(PARAMS)
     fig, axes = plt.subplots(2, n, figsize=(14, 8))
@@ -165,7 +165,7 @@ for tower in towers:
     plt.tight_layout()
     save(fig, out, "03_skewness_qqplots.png")
 
-    # ── Slide 7 / 16 / 25 – DISTRIBUTIONS (hist + KDE) ────────────────────────
+    # ── DISTRIBUTIONS (hist + KDE) ────────────────────────
     print("[4] Distributions")
     fig, axes = plt.subplots(1, n, figsize=(14, 5))
     for ax, col in zip(axes, PARAMS):
@@ -187,7 +187,7 @@ for tower in towers:
     plt.tight_layout()
     save(fig, out, "04_distributions.png")
 
-    # ── Slide 8 / 17 / 26 – SCATTER PLOTS ─────────────────────────────────────
+    # ── SCATTER PLOTS ─────────────────────────────────────
     print("[5] Scatter plots")
     # Pairwise scatter: each param vs Effectiveness + HWT vs CWT, DBT vs WBT
     pairs = [
@@ -224,7 +224,7 @@ for tower in towers:
     plt.tight_layout()
     save(fig, out, "05_scatter_plots.png")
 
-    # ── Slide 9 / 18 / 27 – CORRELATION HEATMAP ───────────────────────────────
+    # ── CORRELATION HEATMAP ───────────────────────────────
     print("[6] Correlation heatmap")
     corr = df[all_cols].corr()
     fig, ax = plt.subplots(figsize=(9, 7))
@@ -300,7 +300,7 @@ for tower in towers:
                  fontsize=13, y=1.01)
     save(fig, out, "07_effectiveness_analysis.png")
 
-    # ── Slide 11 / 20 / 29 – CONCLUSION SUMMARY TABLE ─────────────────────────
+    # ── CONCLUSION SUMMARY TABLE ─────────────────────────
     print("[8] Conclusion summary")
     good_approach = df[df["Cooling Tower Effectiveness"] >= 50]["Approach"]
     lo_ap = good_approach.min() if len(good_approach) else "N/A"
